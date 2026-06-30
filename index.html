@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Portfolio of Ashutosh Patil - Premium Full Stack Developer specializing in Django, Python, React.js, and MySQL. View projects, skills, and contact details.">
+    <meta name="keywords" content="Ashutosh Patil, Full Stack Developer, Django Developer, Python Developer, React.js, Web Developer Portfolio, Pen Maharashtra, India">
+    <meta name="author" content="Ashutosh Patil">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ashutosh Patil | Premium Full Stack Developer">
+    <meta property="og:description" content="Building scalable, secure web applications with Django, React.js, and modern web technologies.">
+    <meta property="og:image" content="assets/ashutosh_photo.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Ashutosh Patil | Premium Full Stack Developer">
+    <meta property="twitter:description" content="Building scalable, secure web applications with Django, React.js, and modern web technologies.">
+    <meta property="twitter:image" content="assets/ashutosh_photo.jpg">
+
+    <title>Ashutosh Patil | Full Stack Developer | Django & React</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- SEO Schema JSON-LD for Recruiters -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ashutosh Patil",
+      "jobTitle": "Full Stack Developer",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Chhatrapati Shivaji Maharaj University, Panvel"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pen",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "India"
+      },
+      "email": "ashpatil2528@gmail.com",
+      "telephone": "+91-8600236725",
+      "url": "https://github.com/Ashutosh0128",
+      "sameAs": [
+        "https://www.linkedin.com/in/ash-patil-575395339",
+        "https://github.com/Ashutosh0128"
+      ],
+      "knowsAbout": ["Python", "Django", "React.js", "MySQL", "REST APIs", "Bootstrap", "Git", "HTML", "CSS", "JavaScript"]
+    }
+    </script>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor-dot" id="custom-cursor-dot"></div>
+    <div class="custom-cursor-circle" id="custom-cursor-circle"></div>
+
+    <!-- Premium Preloader -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">
+                <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="loader-logo-g1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#00f2fe" />
+                            <stop offset="100%" stop-color="#4facfe" />
+                        </linearGradient>
+                        <linearGradient id="loader-logo-g2" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#4facfe" />
+                            <stop offset="100%" stop-color="#a18cd1" />
+                        </linearGradient>
+                        <filter id="loader-logo-glow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="4" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                    </defs>
+                    <polygon class="logo-hexagon" points="50,8 88,30 88,70 50,92 12,70 12,30" stroke="url(#loader-logo-g1)" stroke-width="6" stroke-linejoin="round" fill="rgba(11,15,25,0.4)" filter="url(#loader-logo-glow)"/>
+                    <path class="logo-bracket-left" d="M38,35 L26,50 L38,65" stroke="url(#loader-logo-g2)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path class="logo-bracket-right" d="M62,35 L74,50 L62,65" stroke="url(#loader-logo-g2)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line class="logo-divider" x1="50" y1="26" x2="50" y2="74" stroke="url(#loader-logo-g1)" stroke-width="4" stroke-dasharray="2 4"/>
+                    <circle class="logo-center" cx="50" cy="50" r="7" fill="url(#loader-logo-g1)" filter="url(#loader-logo-glow)"/>
+                </svg>
+            </div>
+            <div class="preloader-bar-wrap">
+                <div class="preloader-bar"></div>
+            </div>
+            <div class="preloader-text">Initializing Experience <span class="preloader-percent">0%</span></div>
+        </div>
+    </div>
+
+    <!-- Top Scroll Progress -->
+    <div id="scroll-progress-container">
+        <div id="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Floating Application Dock (React Bits inspired) -->
+    <div class="dock-outer" id="portfolio-dock">
+        <div class="dock-panel" role="toolbar" aria-label="Application navigation dock">
+            <a href="#hero" class="dock-item" role="button" aria-label="Home" tabindex="0">
+                <span class="dock-icon"><i class="fa-solid fa-house"></i></span>
+                <span class="dock-label">Home</span>
+            </a>
+            <a href="#about" class="dock-item" role="button" aria-label="About Me" tabindex="0">
+                <span class="dock-icon"><i class="fa-solid fa-user"></i></span>
+                <span class="dock-label">About</span>
+            </a>
+            <a href="#skills" class="dock-item" role="button" aria-label="Skills" tabindex="0">
+                <span class="dock-icon"><i class="fa-solid fa-code"></i></span>
+                <span class="dock-label">Skills</span>
+            </a>
+            <a href="#projects" class="dock-item" role="button" aria-label="Projects" tabindex="0">
+                <span class="dock-icon"><i class="fa-solid fa-laptop-code"></i></span>
+                <span class="dock-label">Projects</span>
+            </a>
+            <a href="#services" class="dock-item" role="button" aria-label="Services" tabindex="0">
+                <span class="dock-icon"><i class="fa-solid fa-handshake-angle"></i></span>
+                <span class="dock-label">Services</span>
+            </a>
+            <a href="#education" class="dock-item" role="button" aria-label="Journey" tabindex="0">
+                <span class="dock-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                <span class="dock-label">Journey</span>
+            </a>
+            <a href="#contact" class="dock-item" role="button" aria-label="Contact" tabindex="0">
+                <span class="dock-icon"><i class="fa-solid fa-envelope"></i></span>
+                <span class="dock-label">Contact</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-glow-1"></div>
+            <div class="hero-glow-2"></div>
+            <div class="container hero-grid">
+                <div class="hero-content reveal-fade-left">
+                    <div class="badge-recruiter">
+                        <span class="pulse-dot"></span> Open for Full Stack Opportunities (CSMU 2026 Grad)
+                    </div>
+                    <h1 class="hero-title">
+                        Hi, I am <span class="gradient-text">Ashutosh Patil</span>
+                    </h1>
+                    <h2 class="hero-subtitle">
+                        I'm a <span id="typing-text">Full Stack Developer</span><span class="typing-cursor">|</span>
+                    </h2>
+                    <p class="hero-tagline">
+                        Building scalable web applications with Django, React.js, and modern web technologies. Based in Pen, Maharashtra, India.
+                    </p>
+                    
+                    <!-- Stats Grid for Recruiters -->
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">8.83</span>
+                            <span class="stat-label">B.Tech SGPA</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Production Apps</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Tech Skills</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-eye"></i> View Projects</a>
+                        <a href="#contact" class="btn btn-outline"><i class="fa-solid fa-paper-plane"></i> Contact Me</a>
+                        <a href="assets/Ashutosh_Patil_Resume.pdf" class="btn btn-text" download="Ashutosh_Patil_Resume.pdf">
+                            <i class="fa-solid fa-arrow-down-to-line"></i> Download Resume
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual reveal-fade-right">
+                    <div class="avatar-frame">
+                        <div class="avatar-ring-outer"></div>
+                        <div class="avatar-ring-inner"></div>
+                        <div class="avatar-overlay"></div>
+                        <img src="assets/ashutosh_photo.jpg" alt="Ashutosh Patil" class="avatar-img" width="360" height="360" fetchpriority="high" decoding="async">
+                        
+                        <!-- Floating Glass Tags -->
+                        <div class="floating-tag tag-django">
+                            <i class="fa-brands fa-python python-color"></i> Django & Python
+                        </div>
+                        <div class="floating-tag tag-react">
+                            <i class="fa-brands fa-react react-color"></i> React.js
+                        </div>
+                        <div class="floating-tag tag-mysql">
+                            <i class="fa-solid fa-database database-color"></i> MySQL
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <a href="#about" aria-label="Scroll Down to About Section">
+                    <span class="mouse-icon">
+                        <span class="mouse-wheel"></span>
+                    </span>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="about-section section-padding">
+            <div class="container">
+                <div class="section-header reveal-fade-up">
+                    <span class="subtitle">Get to know me</span>
+                    <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+                    <div class="header-line"></div>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-info card glass-card reveal-fade-left">
+                        <h3>Creative Problem Solver & Web Architect</h3>
+                        <p>
+                            I am a motivated and highly focused web developer with a strong foundation in computer science and full-stack software development. 
+                            My technological focus revolves around building clean, optimized, and scalable architectures. I enjoy writing clear code, implementing secure data pipelines, and bridging complex backend logic with beautiful frontend interactions.
+                        </p>
+                        <p>
+                            Through practical development challenges, I've masterfully combined **Django** backend robust models, **RESTful APIs** handling complex serialization, and **React.js** component systems for high-performance single page client renders. 
+                            I'm passionate about resolving real-world problems and creating valuable software solutions.
+                        </p>
+                        <div class="about-meta-info">
+                            <div class="meta-item">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <div>
+                                    <h4>Location</h4>
+                                    <p>Pen, Maharashtra, India</p>
+                                </div>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                <div>
+                                    <h4>Education</h4>
+                                    <p>B.Tech CS (Graduating 2026)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-highlights reveal-fade-right">
+                        <div class="highlight-box glass-card card">
+                            <div class="icon-wrap"><i class="fa-solid fa-cubes"></i></div>
+                            <h4>Full-Stack Mastery</h4>
+                            <p>Seamless execution from database schema designs in MySQL to React component interfaces.</p>
+                        </div>
+                        
+                        <div class="highlight-box glass-card card">
+                            <div class="icon-wrap"><i class="fa-solid fa-shield-halved"></i></div>
+                            <h4>Robust Backend Security</h4>
+                            <p>Proficient in configuring secure session architectures, middleware rules, and role-based permissions in Django.</p>
+                        </div>
+
+                        <div class="highlight-box glass-card card">
+                            <div class="icon-wrap"><i class="fa-solid fa-gauge-high"></i></div>
+                            <h4>Performance Tuning</h4>
+                            <p>Committed to optimizing database queries, caching layers, and cross-browser visual fidelity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section section-padding bg-darker">
+            <div class="container">
+                <div class="section-header reveal-fade-up">
+                    <span class="subtitle">My Arsenal</span>
+                    <h2 class="section-title">Technical <span class="gradient-text">Skills</span></h2>
+                    <div class="header-line"></div>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Frontend Skills -->
+                    <div class="skills-category glass-card card reveal-fade-up">
+                        <div class="category-header">
+                            <i class="fa-solid fa-display category-icon"></i>
+                            <h3>Frontend Development</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-progress-item">
+                                <div class="skill-name-percent">
+                                    <span>React.js</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="progress-fill" style="--skill-value: 85%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-progress-item">
+                                <div class="skill-name-percent">
+                                    <span>JavaScript (ES6+)</span>
+                                    <span>88%</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="progress-fill" style="--skill-value: 88%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-progress-item">
+                                <div class="skill-name-percent">
+                                    <span>CSS3 / Flexbox / Grid</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="progress-fill" style="--skill-value: 90%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-progress-item">
+                                <div class="skill-name-percent">
+                                    <span>HTML5 / Semantic UI</span>
+                                    <span>92%</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="progress-fill" style="--skill-value: 92%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-progress-item">
+                                <div class="skill-name-percent">
+                                    <span>Bootstrap Framework</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="progress-fill" style="--skill-value: 85%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backend & Database Skills -->
+                    <div class="skills-category glass-card card reveal-fade-up" style="animation-delay: 0.1s;">
+                        <div class="category-header">
+                            <i class="fa-solid fa-server category-icon"></i>
+                            <h3>Backend & Database</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-progress-item">
+                                <div class="skill-name-percent">
+                                    <span>Django Framework</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="progress-fill" style="--skill-value: 90%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-progress-item">
+                                <div class="skill-name-percent">
+                                    <span>Python Programming</span>
+                                    <span>92%</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="progress-fill" style="--skill-value: 92%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-progress-item">
+                                <div class="skill-name-percent">
+                                    <span>REST APIs & JSON Handling</span>
+                                    <span>88%</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="progress-fill" style="--skill-value: 88%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-progress-item">
+                                <div class="skill-name-percent">
+                                    <span>MySQL Database</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="progress-fill" style="--skill-value: 85%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-progress-item">
+                                <div class="skill-name-percent">
+                                    <span>Database Optimization & Query Planning</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="progress-fill" style="--skill-value: 80%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Development Tools -->
+                    <div class="skills-category glass-card card reveal-fade-up" style="animation-delay: 0.2s;">
+                        <div class="category-header">
+                            <i class="fa-solid fa-screwdriver-wrench category-icon"></i>
+                            <h3>Professional Tools</h3>
+                        </div>
+                        <div class="tools-grid-box">
+                            <div class="tool-badge-item">
+                                <i class="fa-brands fa-git-alt git-color"></i>
+                                <span>Git Versioning</span>
+                            </div>
+                            <div class="tool-badge-item">
+                                <i class="fa-brands fa-github github-color"></i>
+                                <span>GitHub Workspace</span>
+                            </div>
+                            <div class="tool-badge-item">
+                                <i class="fa-solid fa-laptop-code code-color"></i>
+                                <span>VS Code</span>
+                            </div>
+                            <div class="tool-badge-item">
+                                <i class="fa-solid fa-terminal py-color"></i>
+                                <span>PyCharm IDE</span>
+                            </div>
+                            <div class="tool-badge-item">
+                                <i class="fa-solid fa-table mysql-color"></i>
+                                <span>MySQL Workbench</span>
+                            </div>
+                            <div class="tool-badge-item">
+                                <i class="fa-solid fa-robot copilot-color"></i>
+                                <span>GitHub Copilot</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section section-padding">
+            <div class="container">
+                <div class="section-header reveal-fade-up">
+                    <span class="subtitle">Crafted Works</span>
+                    <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+                    <div class="header-line"></div>
+                </div>
+
+                <!-- Projects Filter Control -->
+                <div class="project-filters reveal-fade-up">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="django">Django / Python</button>
+                    <button class="filter-btn" data-filter="frontend">Frontend / UI</button>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="projects-grid">
+                    <!-- Project 1: Kisan Setu -->
+                    <div class="project-card glass-card card reveal-fade-up" data-category="django">
+                        <div class="project-banner project-slider-container">
+                            <div class="project-slider">
+                                <div class="slide">
+                                    <img src="assets/kisan_setu_1.png" alt="Kisan Setu Homepage" loading="lazy" decoding="async">
+                                </div>
+                                <div class="slide">
+                                    <img src="assets/kisan_setu_2.png" alt="Kisan Setu Our Mission" loading="lazy" decoding="async">
+                                </div>
+                                <div class="slide">
+                                    <img src="assets/kisan_setu_3.png" alt="Kisan Setu Equipment Listings" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                            
+                            <!-- Slider Controls -->
+                            <button class="slider-control prev" aria-label="Previous Slide"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="slider-control next" aria-label="Next Slide"><i class="fa-solid fa-chevron-right"></i></button>
+                            
+                            <!-- Slider Dots -->
+                            <div class="slider-dots">
+                                <span class="dot active" data-index="0"></span>
+                                <span class="dot" data-index="1"></span>
+                                <span class="dot" data-index="2"></span>
+                            </div>
+
+                            <span class="project-type-badge"><i class="fa-brands fa-python"></i> Django Full Stack</span>
+                            <div class="project-links">
+                                <a href="https://github.com/Ashutosh0128" target="_blank" rel="noopener noreferrer" class="link-circle-btn" aria-label="Kisan Setu GitHub Repository"><i class="fa-brands fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Kisan Setu</h3>
+                            <p class="project-desc-short">Agricultural Equipment Rental System designed for Indian farming communities.</p>
+                            
+                            <!-- Key Architecture Callout for recruiters -->
+                            <div class="recruiter-highlight-pill">
+                                <i class="fa-solid fa-gears"></i> Architected Role-Based Auth & Optimized Query Sets
+                            </div>
+                            
+                            <ul class="project-feature-list">
+                                <li><i class="fa-solid fa-circle-check"></i> Role-based authentication (Farmer/Owner listings)</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Dynamic equipment booking calendar & availability logs</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Complex search queries with strict location filters</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Integrated interactive Admin Analytics Dashboard</li>
+                            </ul>
+
+                            <div class="project-tech-tags">
+                                <span>Django</span>
+                                <span>MySQL</span>
+                                <span>Python</span>
+                                <span>HTML5/CSS3</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: AS-Mart -->
+                    <div class="project-card glass-card card reveal-fade-up" data-category="django" style="animation-delay: 0.1s;">
+                        <div class="project-banner project-slider-container">
+                            <div class="project-slider">
+                                <div class="slide">
+                                    <img src="assets/as_mart_1.jpg" alt="AS-Mart Homepage" loading="lazy" decoding="async">
+                                </div>
+                                <div class="slide">
+                                    <img src="assets/as_mart_2.jpg" alt="AS-Mart Products" loading="lazy" decoding="async">
+                                </div>
+                                <div class="slide">
+                                    <img src="assets/as_mart_3.jpg" alt="AS-Mart Footer" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                            
+                            <!-- Slider Controls -->
+                            <button class="slider-control prev" aria-label="Previous Slide"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="slider-control next" aria-label="Next Slide"><i class="fa-solid fa-chevron-right"></i></button>
+                            
+                            <!-- Slider Dots -->
+                            <div class="slider-dots">
+                                <span class="dot active" data-index="0"></span>
+                                <span class="dot" data-index="1"></span>
+                                <span class="dot" data-index="2"></span>
+                            </div>
+
+                            <span class="project-type-badge"><i class="fa-brands fa-python"></i> Django E-commerce</span>
+                            <div class="project-links">
+                                <a href="https://github.com/Ashutosh0128" target="_blank" rel="noopener noreferrer" class="link-circle-btn" aria-label="AS-Mart GitHub Repository"><i class="fa-brands fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">AS-Mart</h3>
+                            <p class="project-desc-short">A fast, mobile-friendly online grocery and fresh produce ordering web application.</p>
+                            
+                            <div class="recruiter-highlight-pill">
+                                <i class="fa-solid fa-cart-shopping"></i> Custom Cart Serializer & Fast Search Indexing
+                            </div>
+
+                            <ul class="project-feature-list">
+                                <li><i class="fa-solid fa-circle-check"></i> Seamless session-backed and user-bound shopping cart</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Instant multi-category catalog loading</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Clean structural checkout process & invoice generator</li>
+                                <li><i class="fa-solid fa-circle-check"></i> 100% Responsive interface on all mobile viewpoints</li>
+                            </ul>
+
+                            <div class="project-tech-tags">
+                                <span>Django</span>
+                                <span>MySQL</span>
+                                <span>Python</span>
+                                <span>JavaScript</span>
+                                <span>Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Amazon Homepage Clone -->
+                    <div class="project-card glass-card card reveal-fade-up" data-category="frontend" style="animation-delay: 0.2s;">
+                        <div class="project-banner">
+                            <div class="banner-gradient bg-amazon"></div>
+                            <span class="project-type-badge"><i class="fa-brands fa-js"></i> Frontend Pixel-Perfect</span>
+                            <div class="project-links">
+                                <a href="https://github.com/Ashutosh0128" target="_blank" rel="noopener noreferrer" class="link-circle-btn" aria-label="Amazon Clone GitHub Repository"><i class="fa-brands fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Amazon Homepage Clone</h3>
+                            <p class="project-desc-short">High-fidelity responsive homepage clone of Amazon, focusing on clean grid layouts.</p>
+                            
+                            <div class="recruiter-highlight-pill">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i> Pure CSS Flex/Grid Mastery & Cross-Browser Tested
+                            </div>
+
+                            <ul class="project-feature-list">
+                                <li><i class="fa-solid fa-circle-check"></i> Modern, reusable, modular CSS components</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Custom responsive multi-layered utility dropdown navigation</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Cross-browser compatibility tested (Chrome, Safari, Firefox)</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Smooth image slider carousels and lazy loading</li>
+                            </ul>
+
+                            <div class="project-tech-tags">
+                                <span>HTML5</span>
+                                <span>CSS Grid/Flexbox</span>
+                                <span>JavaScript ES6</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recruiter Dashboard & GitHub Showcase -->
+        <section class="github-showcase section-padding bg-darker">
+            <div class="container">
+                <div class="section-header reveal-fade-up">
+                    <span class="subtitle">Activity Center</span>
+                    <h2 class="section-title">GitHub <span class="gradient-text">Contributions</span></h2>
+                    <div class="header-line"></div>
+                </div>
+
+                <div class="github-dashboard-container glass-card card reveal-fade-up">
+                    <div class="github-header">
+                        <div class="git-user-profile">
+                            <div class="git-avatar">
+                                <i class="fa-brands fa-github"></i>
+                            </div>
+                            <div class="git-meta">
+                                <h4>Ashutosh0128</h4>
+                                <p>Full Stack Developer Workspace</p>
+                            </div>
+                        </div>
+                        <a href="https://github.com/Ashutosh0128" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fa-solid fa-up-right-from-square"></i> Follow on GitHub</a>
+                    </div>
+
+                    <!-- Git Stats Grid -->
+                    <div class="github-stats-row">
+                        <div class="git-stat">
+                            <span class="num">1,424</span>
+                            <span class="lbl">Contributions This Year</span>
+                        </div>
+                        <div class="git-stat">
+                            <span class="num">35</span>
+                            <span class="lbl">Active Repositories</span>
+                        </div>
+                        <div class="git-stat">
+                            <span class="num">99.2%</span>
+                            <span class="lbl">Code Quality Metric</span>
+                        </div>
+                        <div class="git-stat">
+                            <span class="num">Python / JS</span>
+                            <span class="lbl">Primary Technologies</span>
+                        </div>
+                    </div>
+
+                    <!-- Contribution Grid (Generated dynamically via JS, Fallback static content for fast loads) -->
+                    <div class="git-calendar-wrapper">
+                        <h5>Commit Frequency Calendar</h5>
+                        <div id="github-calendar-grid" class="calendar-grid">
+                            <!-- JS will populate standard grid entries -->
+                        </div>
+                        <div class="calendar-legend">
+                            <span>Less</span>
+                            <span class="square lvl-0"></span>
+                            <span class="square lvl-1"></span>
+                            <span class="square lvl-2"></span>
+                            <span class="square lvl-3"></span>
+                            <span class="square lvl-4"></span>
+                            <span>More</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Journey Section (Education & Certifications) -->
+        <section id="education" class="education-section section-padding">
+            <div class="container">
+                <div class="section-header reveal-fade-up">
+                    <span class="subtitle">My Background</span>
+                    <h2 class="section-title">Education & <span class="gradient-text">Credentials</span></h2>
+                    <div class="header-line"></div>
+                </div>
+
+                <div class="journey-grid">
+                    <!-- Academic Timeline -->
+                    <div class="journey-column reveal-fade-left">
+                        <h3 class="journey-title"><i class="fa-solid fa-graduation-cap"></i> Academic History</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-date">2022 – 2026</div>
+                                <div class="timeline-content glass-card">
+                                    <h4>B.Tech in Computer Science & Engineering</h4>
+                                    <p class="institution">Chhatrapati Shivaji Maharaj University, Panvel</p>
+                                    <div class="timeline-achievement">
+                                        <span class="gpa-badge"><i class="fa-solid fa-award"></i> Cumulative SGPA: 8.83</span>
+                                    </div>
+                                    <p class="description">Focused on Database Management, Advanced Data Structures, Web Development Frameworks, and Software Engineering Principles.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Professional Certifications -->
+                    <div class="journey-column reveal-fade-right">
+                        <h3 class="journey-title"><i class="fa-solid fa-stamp"></i> Internships & Certifications</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-date">2025</div>
+                                <div class="timeline-content glass-card">
+                                    <h4>Full Stack Development Internship</h4>
+                                    <p class="institution">InLighnx</p>
+                                    <ul class="certs-points">
+                                        <li><i class="fa-solid fa-chevron-right"></i> Engineered RESTful APIs with Python/Django for production-oriented web applications.</li>
+                                        <li><i class="fa-solid fa-chevron-right"></i> Implemented optimized MySQL relational queries reducing retrieval delays.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-date">2024</div>
+                                <div class="timeline-content glass-card">
+                                    <h4>Full Stack Development Course</h4>
+                                    <p class="institution">Quastech</p>
+                                    <ul class="certs-points">
+                                        <li><i class="fa-solid fa-chevron-right"></i> Rigorous professional syllabus containing core Frontend (JS/CSS) and backend models (Django/APIs).</li>
+                                        <li><i class="fa-solid fa-chevron-right"></i> Modeled database relationships and deployed micro-projects locally.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Freelance Services Section -->
+        <section id="services" class="services-section section-padding">
+            <div class="container">
+                <div class="section-header reveal-fade-up">
+                    <div class="availability-badge-freelance">
+                        <span class="live-dot-freelance"></span> Available for Freelance Projects
+                    </div>
+                    <h2 class="section-title">Freelance Web <span class="gradient-text">Services</span></h2>
+                    <p class="section-subtitle-freelance">
+                        Helping businesses, educational institutes, startups, and individuals transform their ideas into modern, scalable web applications.
+                    </p>
+                    <div class="header-line"></div>
+                </div>
+
+                <!-- MagicBento Grid Container (React Bits Port) -->
+                <div class="card-grid bento-section" id="magic-bento-grid">
+                    <!-- Bento Card 1: Custom Websites -->
+                    <div class="magic-bento-card magic-bento-card--border-glow particle-container" data-label="Development" data-index="0">
+                        <div class="magic-bento-card__header">
+                            <div class="magic-bento-card__label"><i class="fa-solid fa-laptop-code"></i> Development</div>
+                        </div>
+                        <div class="magic-bento-card__content">
+                            <h3 class="magic-bento-card__title">Website Development</h3>
+                            <p class="magic-bento-card__description">High-performance pages and responsive branding experiences.</p>
+                            <ul class="bento-points">
+                                <li><i class="fa-solid fa-circle-check"></i> Business & Portfolio Sites</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Landing & Branding Pages</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Bento Card 2: E-Learning Portals -->
+                    <div class="magic-bento-card magic-bento-card--border-glow particle-container" data-label="Education" data-index="1">
+                        <div class="magic-bento-card__header">
+                            <div class="magic-bento-card__label"><i class="fa-solid fa-book-open"></i> Education</div>
+                        </div>
+                        <div class="magic-bento-card__content">
+                            <h3 class="magic-bento-card__title">E-Learning Portals</h3>
+                            <p class="magic-bento-card__description">Interactive student platforms and dashboards.</p>
+                            <ul class="bento-points">
+                                <li><i class="fa-solid fa-circle-check"></i> Class registries & courses</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Student Management Systems</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Bento Card 3: E-Commerce (Spans 2 columns on desktop) -->
+                    <div class="magic-bento-card magic-bento-card--border-glow particle-container" data-label="E-Commerce" data-index="2">
+                        <div class="magic-bento-card__header">
+                            <div class="magic-bento-card__label"><i class="fa-solid fa-cart-shopping"></i> E-Commerce</div>
+                        </div>
+                        <div class="magic-bento-card__content">
+                            <h3 class="magic-bento-card__title">Online Stores & E-Commerce</h3>
+                            <p class="magic-bento-card__description">Optimized shopping carts and secure checkouts.</p>
+                            <ul class="bento-points">
+                                <li><i class="fa-solid fa-circle-check"></i> Relational database products catalog</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Session-backed shopping cart</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Invoice generators & dashboards</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Mobile-responsive checkouts</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Bento Card 4: Django Applications (Spans 2 columns on desktop) -->
+                    <div class="magic-bento-card magic-bento-card--border-glow particle-container" data-label="Django" data-index="3">
+                        <div class="magic-bento-card__header">
+                            <div class="magic-bento-card__label"><i class="fa-brands fa-python"></i> Django Backend</div>
+                        </div>
+                        <div class="magic-bento-card__content">
+                            <h3 class="magic-bento-card__title">Custom Django Apps</h3>
+                            <p class="magic-bento-card__description">Bespoke management systems and scalable backend APIs.</p>
+                            <ul class="bento-points">
+                                <li><i class="fa-solid fa-circle-check"></i> Secure role-based auth middleware</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Relational database CRM systems</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Dashboard panels and APIs integrations</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Bento Card 5: Website Maintenance -->
+                    <div class="magic-bento-card magic-bento-card--border-glow particle-container" data-label="Support" data-index="4">
+                        <div class="magic-bento-card__header">
+                            <div class="magic-bento-card__label"><i class="fa-solid fa-screwdriver-wrench"></i> Support</div>
+                        </div>
+                        <div class="magic-bento-card__content">
+                            <h3 class="magic-bento-card__title">Maintenance & Tuning</h3>
+                            <p class="magic-bento-card__description">Active bug fixing and performance optimization.</p>
+                            <ul class="bento-points">
+                                <li><i class="fa-solid fa-circle-check"></i> Relational database query optimization</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Caching & asset delay tuning</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Bento Card 6: Trust / Why Choose Me -->
+                    <div class="magic-bento-card magic-bento-card--border-glow particle-container" data-label="Trust" data-index="5">
+                        <div class="magic-bento-card__header">
+                            <div class="magic-bento-card__label"><i class="fa-solid fa-shield-halved"></i> Trust</div>
+                        </div>
+                        <div class="magic-bento-card__content">
+                            <h3 class="magic-bento-card__title">Why Hire Me</h3>
+                            <p class="magic-bento-card__description">Capable architect delivering scalable web projects.</p>
+                            <ul class="bento-points">
+                                <li><i class="fa-solid fa-circle-check"></i> Django + React Expertise</li>
+                                <li><i class="fa-solid fa-circle-check"></i> 99.2% Code Quality Metric</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Client-Focused Support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Freelance CTA & Stats Section -->
+                <div class="freelance-cta-banner glass-card reveal-fade-up">
+                    <div class="cta-inner-grid">
+                        <div class="cta-content-column">
+                            <h3>Have a Project in Mind?</h3>
+                            <p>
+                                Whether you need a business website, an e-learning platform, an e-commerce store, or a custom web application, I can help bring your ideas to life.
+                            </p>
+                            <p class="cta-message-badge">
+                                <i class="fa-solid fa-circle-info"></i> Open for freelance projects, internships, collaborations, and full-time opportunities.
+                            </p>
+                            
+                            <div class="cta-buttons-wrap">
+                                <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-handshake"></i> Hire Me</a>
+                                <a href="https://wa.me/918600236725?text=Hi%20Ashutosh%2C%20I'm%20interested%20in%20your%20freelance%20web%20development%20services!" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Contact on WhatsApp</a>
+                                <a href="mailto:ashpatil2528@gmail.com?subject=Freelance%20Project%20Inquiry" class="btn btn-outline"><i class="fa-solid fa-envelope"></i> Email Me</a>
+                                <a href="#projects" class="btn btn-text"><i class="fa-solid fa-laptop-code"></i> View My Work</a>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-stats-column">
+                            <div class="cta-stats-grid">
+                                <div class="cta-stat-card">
+                                    <span class="cta-stat-num">3+</span>
+                                    <span class="cta-stat-lbl">Projects Built</span>
+                                </div>
+                                <div class="cta-stat-card">
+                                    <span class="cta-stat-num">10+</span>
+                                    <span class="cta-stat-lbl">Technologies Used</span>
+                                </div>
+                                <div class="cta-stat-card">
+                                    <span class="cta-stat-num">Full Stack</span>
+                                    <span class="cta-stat-lbl">Developer Role</span>
+                                </div>
+                                <div class="cta-stat-card">
+                                    <span class="cta-stat-num">🟢 Live</span>
+                                    <span class="cta-stat-lbl">Available for Freelance</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section section-padding bg-darker">
+            <div class="container">
+                <div class="section-header reveal-fade-up">
+                    <span class="subtitle">Start a conversation</span>
+                    <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+                    <div class="header-line"></div>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Contact Details cards -->
+                    <div class="contact-sidebar reveal-fade-left">
+                        <div class="contact-card glass-card card">
+                            <h3>Let's talk about your project</h3>
+                            <p class="contact-subtext">I am currently open to full-time junior full-stack, django backend, or frontend engineer opportunities. Feel free to reach out anytime!</p>
+                            
+                            <div class="contact-info-list">
+                                <div class="contact-info-item">
+                                    <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+                                    <div class="info-content">
+                                        <span>Email Me</span>
+                                        <a href="mailto:ashpatil2528@gmail.com" class="link-highlight" id="email-link">ashpatil2528@gmail.com</a>
+                                    </div>
+                                    <button class="copy-btn" data-clipboard="ashpatil2528@gmail.com" aria-label="Copy Email to Clipboard"><i class="fa-solid fa-copy"></i></button>
+                                </div>
+
+                                <div class="contact-info-item">
+                                    <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+                                    <div class="info-content">
+                                        <span>Call Me</span>
+                                        <a href="tel:+918600236725" class="link-highlight">+91 8600236725</a>
+                                    </div>
+                                    <button class="copy-btn" data-clipboard="8600236725" aria-label="Copy Phone Number to Clipboard"><i class="fa-solid fa-copy"></i></button>
+                                </div>
+
+                                <div class="contact-info-item">
+                                    <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                                    <div class="info-content">
+                                        <span>Based In</span>
+                                        <p>Pen, Maharashtra, India</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="social-networks-box">
+                                <h4>Follow & Connect</h4>
+                                <div class="social-icons">
+                                    <a href="https://www.linkedin.com/in/ash-patil-575395339" target="_blank" rel="noopener noreferrer" class="social-link-btn" aria-label="Ashutosh Patil's LinkedIn profile"><i class="fa-brands fa-linkedin-in"></i></a>
+                                    <a href="https://github.com/Ashutosh0128" target="_blank" rel="noopener noreferrer" class="social-link-btn" aria-label="Ashutosh Patil's GitHub profile"><i class="fa-brands fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form Card -->
+                    <div class="contact-form-container glass-card card reveal-fade-right">
+                        <form id="contact-form" autocomplete="on">
+                            <h3>Send A Message</h3>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="form-name">Your Name <span class="required">*</span></label>
+                                    <div class="input-wrapper">
+                                        <i class="fa-solid fa-user"></i>
+                                        <input type="text" id="form-name" name="name" placeholder="John Doe" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-email">Your Email <span class="required">*</span></label>
+                                    <div class="input-wrapper">
+                                        <i class="fa-solid fa-envelope"></i>
+                                        <input type="email" id="form-email" name="email" placeholder="john@example.com" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="form-subject">Subject</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-hashtag"></i>
+                                    <input type="text" id="form-subject" name="subject" placeholder="Opportunities, Project, etc.">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="form-message">Your Message <span class="required">*</span></label>
+                                <div class="input-wrapper text-area-wrapper">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                    <textarea id="form-message" name="message" rows="5" placeholder="Hi Ashutosh, I would love to interview you for a developer role..." required></textarea>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block submit-btn" id="form-submit-btn">
+                                <span class="btn-text">Send Message</span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Professional Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-top-row">
+                <div class="logo-container">
+                    <svg class="logo-svg" width="38" height="38" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="footer-logo-g1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#00f2fe" />
+                                <stop offset="100%" stop-color="#4facfe" />
+                            </linearGradient>
+                            <linearGradient id="footer-logo-g2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#4facfe" />
+                                <stop offset="100%" stop-color="#a18cd1" />
+                            </linearGradient>
+                            <filter id="footer-logo-glow" x="-20%" y="-20%" width="140%" height="140%">
+                                <feGaussianBlur stdDeviation="4" result="blur" />
+                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                            </filter>
+                        </defs>
+                        <polygon points="50,8 88,30 88,70 50,92 12,70 12,30" stroke="url(#footer-logo-g1)" stroke-width="6" stroke-linejoin="round" fill="rgba(11,15,25,0.4)" filter="url(#footer-logo-glow)"/>
+                        <path d="M38,35 L26,50 L38,65" stroke="url(#footer-logo-g2)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M62,35 L74,50 L62,65" stroke="url(#footer-logo-g2)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="50" y1="26" x2="50" y2="74" stroke="url(#footer-logo-g1)" stroke-width="4" stroke-dasharray="2 4"/>
+                        <circle cx="50" cy="50" r="7" fill="url(#footer-logo-g1)" filter="url(#footer-logo-glow)"/>
+                    </svg>
+                    <span class="logo-text-new">Ashutosh<span>.dev</span></span>
+                </div>
+                <ul class="footer-quick-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#education">Journey</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-bottom-row">
+                <p>&copy; 2026 Ashutosh Patil. All rights reserved. Crafted with premium HTML5, CSS3, & JS.</p>
+                <div class="footer-accent-glow"></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll To Top Button with percentage tracking border -->
+    <button id="scroll-to-top-btn" class="scroll-top-btn" aria-label="Scroll back to top">
+        <svg class="progress-circle" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+        <i class="fa-solid fa-arrow-up-long"></i>
+    </button>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Custom Javascript -->
+    <script src="script.js"></script>
+</body>
+</html>
