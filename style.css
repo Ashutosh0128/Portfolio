@@ -1405,6 +1405,34 @@ ul {
     margin-top: 5px;
 }
 
+.cert-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+    padding: 7px 16px;
+    border-radius: 50px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--primary);
+    background: rgba(0, 242, 254, 0.08);
+    border: 1px solid rgba(0, 242, 254, 0.25);
+    text-decoration: none;
+    transition: background 0.25s, border-color 0.25s, color 0.25s, transform 0.2s;
+    letter-spacing: 0.02em;
+}
+
+.cert-link-btn:hover {
+    background: rgba(0, 242, 254, 0.18);
+    border-color: var(--primary);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.cert-link-btn i {
+    font-size: 0.85rem;
+}
+
 /* ==========================================
    11. Contact Section & Forms
    ========================================== */
