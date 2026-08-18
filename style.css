@@ -506,8 +506,8 @@ ul {
 
 .avatar-frame {
     position: relative;
-    width: 340px;
-    height: 340px;
+    width: 370px;
+    height: 370px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -515,8 +515,8 @@ ul {
 
 .avatar-img {
     border-radius: 50%;
-    width: 290px;
-    height: 290px;
+    width: 320px;
+    height: 320px;
     object-fit: cover;
     object-position: center 22%;
     z-index: 5;
@@ -535,8 +535,8 @@ ul {
 
 .avatar-overlay {
     position: absolute;
-    width: 290px;
-    height: 290px;
+    width: 320px;
+    height: 320px;
     border-radius: 50%;
     background: linear-gradient(135deg, rgba(0, 242, 254, 0.25) 0%, rgba(161, 140, 209, 0.2) 100%);
     z-index: 6;
