@@ -259,26 +259,231 @@ document.addEventListener('DOMContentLoaded', () => {
     initProjectSliders();
 
     // ==========================================
-    // 8. GitHub Contribution Grid
+    // 8. Real GitHub Data & Contribution Heatmap
     // ==========================================
-    const calendarGrid = document.getElementById('github-calendar-grid');
-    if (calendarGrid) {
-        const totalDays = 53 * 7;
+    const initGitHubData = async () => {
+        const username = 'Ashutosh0128';
+        const calendarGrid = document.getElementById('github-calendar-grid');
+        const calendarMonths = document.getElementById('calendar-months');
+        const contribTotalBadge = document.getElementById('contrib-total-badge');
+        const statRepos = document.getElementById('github-stat-repos');
+        const statLangs = document.getElementById('github-stat-langs');
+        const statActive = document.getElementById('github-stat-active');
+        const statTotal = document.getElementById('github-stat-total');
+        const avatarContainer = document.getElementById('github-avatar');
+        const fallbackState = document.getElementById('github-fallback-state');
+        const calendarWrap = document.getElementById('github-calendar-wrap');
+        const statsRow = document.getElementById('github-stats-row');
 
-        for (let i = 0; i < totalDays; i++) {
-            const day = document.createElement('div');
-            day.classList.add('calendar-day');
+        if (!calendarGrid) return;
 
-            const r = Math.random();
-            if (r > 0.88) day.classList.add('lvl-4');
-            else if (r > 0.75) day.classList.add('lvl-3');
-            else if (r > 0.55) day.classList.add('lvl-2');
-            else if (r > 0.35) day.classList.add('lvl-1');
-            else day.classList.add('lvl-0');
-
-            calendarGrid.appendChild(day);
+        // Create floating tooltip element
+        let tooltipEl = document.getElementById('github-tooltip');
+        if (!tooltipEl) {
+            tooltipEl = document.createElement('div');
+            tooltipEl.id = 'github-tooltip';
+            tooltipEl.className = 'github-tooltip';
+            document.body.appendChild(tooltipEl);
         }
-    }
+
+        const showDayTooltip = (e, text) => {
+            tooltipEl.textContent = text;
+            tooltipEl.classList.add('visible');
+            const rect = e.target.getBoundingClientRect();
+            const tipWidth = tooltipEl.offsetWidth || 180;
+            const tipHeight = tooltipEl.offsetHeight || 28;
+
+            let left = rect.left + rect.width / 2 - tipWidth / 2;
+            let top = rect.top - tipHeight - 8;
+
+            if (left < 8) left = 8;
+            if (left + tipWidth > window.innerWidth - 8) left = window.innerWidth - tipWidth - 8;
+            if (top < 8) top = rect.bottom + 8;
+
+            tooltipEl.style.left = `${left}px`;
+            tooltipEl.style.top = `${top}px`;
+        };
+
+        const hideDayTooltip = () => {
+            tooltipEl.classList.remove('visible');
+        };
+
+        const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+        const formatDisplayDate = (dateStr) => {
+            try {
+                const parts = dateStr.split('-');
+                if (parts.length === 3) {
+                    const d = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
+                    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                }
+                return dateStr;
+            } catch {
+                return dateStr;
+            }
+        };
+
+        // Fetch handler with automatic fallback
+        let payload = null;
+
+        try {
+            // 1. Try Vercel Serverless Function first
+            const apiRes = await fetch(`/api/github-contributions?username=${username}`);
+            if (apiRes.ok) {
+                const json = await apiRes.json();
+                if (json.success && json.weeks && json.weeks.length > 0) {
+                    payload = json;
+                }
+            }
+        } catch {
+            // If running as local file or serverless function not yet deployed
+        }
+
+        // 2. Client-side fallback if serverless function is not running (e.g. local preview)
+        if (!payload) {
+            try {
+                // Fetch public profile and repos directly from GitHub REST API
+                const [userRes, reposRes, contribsRes] = await Promise.allSettled([
+                    fetch(`https://api.github.com/users/${username}`),
+                    fetch(`https://api.github.com/users/${username}/repos?per_page=100`),
+                    fetch(`https://github-contributions-api.jogruber.de/v4/${username}?y=last`)
+                ]);
+
+                let publicRepos = null;
+                let activeSince = null;
+                let avatarUrl = '';
+                let primaryLanguages = '';
+
+                if (userRes.status === 'fulfilled' && userRes.value.ok) {
+                    const uData = await userRes.value.json();
+                    publicRepos = uData.public_repos;
+                    avatarUrl = uData.avatar_url;
+                    if (uData.created_at) {
+                        activeSince = new Date(uData.created_at).getFullYear();
+                    }
+                }
+
+                if (reposRes.status === 'fulfilled' && reposRes.value.ok) {
+                    const rData = await reposRes.value.json();
+                    const langCounts = {};
+                    rData.forEach(r => {
+                        if (r.language) langCounts[r.language] = (langCounts[r.language] || 0) + 1;
+                    });
+                    const topLangs = Object.entries(langCounts)
+                        .sort((a, b) => b[1] - a[1])
+                        .slice(0, 4)
+                        .map(e => e[0]);
+                    if (topLangs.length > 0) primaryLanguages = topLangs.join(', ');
+                }
+
+                if (contribsRes.status === 'fulfilled' && contribsRes.value.ok) {
+                    const cData = await contribsRes.value.json();
+                    const totalContributions = typeof cData.total === 'object'
+                        ? Object.values(cData.total)[0] || 0
+                        : cData.total || 0;
+
+                    // Group days into weeks
+                    const weeks = [];
+                    let currentWeek = [];
+                    if (Array.isArray(cData.contributions)) {
+                        cData.contributions.forEach((day, idx) => {
+                            const count = day.count || 0;
+                            const tooltip = `${count === 0 ? 'No' : count} contribution${count === 1 ? '' : 's'} on ${formatDisplayDate(day.date)}`;
+                            currentWeek.push({
+                                date: day.date,
+                                count,
+                                level: day.level !== undefined ? day.level : (count > 0 ? 1 : 0),
+                                tooltip
+                            });
+                            if (currentWeek.length === 7 || idx === cData.contributions.length - 1) {
+                                weeks.push({ contributionDays: currentWeek });
+                                currentWeek = [];
+                            }
+                        });
+                    }
+
+                    payload = {
+                        username,
+                        avatarUrl,
+                        publicRepos,
+                        activeSince,
+                        primaryLanguages: primaryLanguages || 'HTML, JavaScript, Python',
+                        totalContributions,
+                        weeks
+                    };
+                }
+            } catch (fallbackErr) {
+                console.warn('Fallback GitHub fetch error:', fallbackErr);
+            }
+        }
+
+        // 3. Render or Display Clean Fallback State
+        if (!payload || !payload.weeks || payload.weeks.length === 0) {
+            // Clean fallback state as requested
+            if (calendarWrap) calendarWrap.style.display = 'none';
+            if (statsRow) statsRow.style.display = 'none';
+            if (fallbackState) fallbackState.style.display = 'block';
+            return;
+        }
+
+        // Populate avatar if returned
+        if (payload.avatarUrl && avatarContainer) {
+            avatarContainer.innerHTML = `<img src="${payload.avatarUrl}" alt="${username} GitHub avatar" loading="lazy">`;
+        }
+
+        // Populate stats with real numbers
+        if (statRepos) statRepos.textContent = payload.publicRepos !== null ? payload.publicRepos : '—';
+        if (statLangs) statLangs.textContent = payload.primaryLanguages || '—';
+        if (statActive) statActive.textContent = payload.activeSince || '—';
+        if (statTotal) statTotal.textContent = payload.totalContributions !== undefined ? payload.totalContributions : '—';
+        if (contribTotalBadge) {
+            contribTotalBadge.textContent = `${payload.totalContributions} contributions in the last year`;
+        }
+
+        // Render Calendar Grid & Month Labels
+        calendarGrid.innerHTML = '';
+        if (calendarMonths) calendarMonths.innerHTML = '';
+
+        let lastMonth = -1;
+        const colWidth = 15; // 12px day + 3px gap
+
+        payload.weeks.forEach((week, weekIndex) => {
+            // Check first day of week for month label
+            if (week.contributionDays && week.contributionDays.length > 0) {
+                const firstDay = week.contributionDays[0];
+                if (firstDay && firstDay.date) {
+                    const monthIdx = parseInt(firstDay.date.split('-')[1], 10) - 1;
+                    if (monthIdx !== lastMonth) {
+                        lastMonth = monthIdx;
+                        if (calendarMonths) {
+                            const monthSpan = document.createElement('span');
+                            monthSpan.className = 'calendar-month-label';
+                            monthSpan.style.left = `${weekIndex * colWidth}px`;
+                            monthSpan.textContent = monthNames[monthIdx] || '';
+                            calendarMonths.appendChild(monthSpan);
+                        }
+                    }
+                }
+            }
+
+            // Render 7 days per column
+            week.contributionDays.forEach(day => {
+                const dayEl = document.createElement('div');
+                dayEl.className = `calendar-day lvl-${Math.min(4, Math.max(0, day.level || 0))}`;
+                dayEl.setAttribute('data-date', day.date);
+                dayEl.setAttribute('data-count', String(day.count || 0));
+                dayEl.setAttribute('role', 'gridcell');
+                dayEl.setAttribute('aria-label', day.tooltip);
+
+                dayEl.addEventListener('mouseenter', (e) => showDayTooltip(e, day.tooltip));
+                dayEl.addEventListener('mouseleave', hideDayTooltip);
+
+                calendarGrid.appendChild(dayEl);
+            });
+        });
+    };
+
+    initGitHubData();
 
     // ==========================================
     // 9. Toast Notifications

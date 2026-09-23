@@ -522,15 +522,15 @@
                     <p>Projects, experiments, and day-to-day development work.</p>
                 </div>
 
-                <div class="github-card reveal-fade-up">
+                <div class="github-card reveal-fade-up" id="github-card">
                     <div class="github-card-header">
                         <div class="github-profile">
-                            <div class="github-avatar">
+                            <div class="github-avatar" id="github-avatar">
                                 <i class="fa-brands fa-github"></i>
                             </div>
                             <div class="github-profile-text">
-                                <h4>Ashutosh0128</h4>
-                                <p>github.com/Ashutosh0128</p>
+                                <h4 id="github-username">Ashutosh0128</h4>
+                                <p id="github-profile-handle">github.com/Ashutosh0128</p>
                             </div>
                         </div>
                         <a href="https://github.com/Ashutosh0128" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" id="github-profile-btn">
@@ -538,33 +538,67 @@
                         </a>
                     </div>
 
-                    <div class="github-stats-row">
+                    <div class="github-stats-row" id="github-stats-row">
                         <div class="github-stat">
-                            <span class="num">35+</span>
+                            <span class="num" id="github-stat-repos">—</span>
                             <span class="lbl">Repositories</span>
                         </div>
                         <div class="github-stat">
-                            <span class="num">Python / JS</span>
+                            <span class="num" id="github-stat-langs">—</span>
                             <span class="lbl">Primary Languages</span>
                         </div>
                         <div class="github-stat">
-                            <span class="num">2022</span>
+                            <span class="num" id="github-stat-active">—</span>
                             <span class="lbl">Active Since</span>
+                        </div>
+                        <div class="github-stat">
+                            <span class="num" id="github-stat-total">—</span>
+                            <span class="lbl">Year Contributions</span>
                         </div>
                     </div>
 
-                    <div class="github-calendar-wrap">
-                        <h5>Contribution Activity</h5>
-                        <div id="github-calendar-grid" class="calendar-grid"></div>
-                        <div class="calendar-legend">
-                            <span>Less</span>
-                            <span class="square lvl-0"></span>
-                            <span class="square lvl-1"></span>
-                            <span class="square lvl-2"></span>
-                            <span class="square lvl-3"></span>
-                            <span class="square lvl-4"></span>
-                            <span>More</span>
+                    <div class="github-calendar-wrap" id="github-calendar-wrap">
+                        <div class="calendar-header-flex">
+                            <h5>Contribution Activity</h5>
+                            <span class="contrib-total-badge" id="contrib-total-badge">Loading activity...</span>
                         </div>
+
+                        <div class="calendar-scroll-container">
+                            <div class="calendar-months" id="calendar-months"></div>
+                            <div class="calendar-body-flex">
+                                <div class="calendar-days-labels">
+                                    <span>Mon</span>
+                                    <span>Wed</span>
+                                    <span>Fri</span>
+                                </div>
+                                <div id="github-calendar-grid" class="calendar-grid" role="grid" aria-label="GitHub Contributions"></div>
+                            </div>
+                        </div>
+
+                        <div class="calendar-footer-flex">
+                            <div class="calendar-legend">
+                                <span>Less</span>
+                                <span class="square lvl-0" title="No contributions"></span>
+                                <span class="square lvl-1" title="Low activity"></span>
+                                <span class="square lvl-2" title="Medium activity"></span>
+                                <span class="square lvl-3" title="High activity"></span>
+                                <span class="square lvl-4" title="Highest activity"></span>
+                                <span>More</span>
+                            </div>
+                            <a href="https://github.com/Ashutosh0128" target="_blank" rel="noopener noreferrer" class="calendar-github-link">
+                                <i class="fa-brands fa-github"></i> github.com/Ashutosh0128
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Clean Fallback State (Shown if real data cannot be loaded) -->
+                    <div class="github-fallback-state" id="github-fallback-state" style="display: none;">
+                        <div class="fallback-icon"><i class="fa-brands fa-github"></i></div>
+                        <h4 class="fallback-title">GitHub activity unavailable</h4>
+                        <p class="fallback-desc">Unable to load contribution data at this moment.</p>
+                        <a href="https://github.com/Ashutosh0128" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                            View GitHub Profile <i class="fa-solid fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
