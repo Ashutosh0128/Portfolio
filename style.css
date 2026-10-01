@@ -1166,6 +1166,9 @@ ul { list-style: none; }
 .calendar-month-label {
     position: absolute;
     transform: translateX(0);
+    white-space: nowrap;
+    user-select: none;
+    pointer-events: none;
 }
 
 .calendar-body-flex {

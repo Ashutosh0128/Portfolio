@@ -444,29 +444,66 @@ document.addEventListener('DOMContentLoaded', () => {
         calendarGrid.innerHTML = '';
         if (calendarMonths) calendarMonths.innerHTML = '';
 
-        let lastMonth = -1;
         const colWidth = 15; // 12px day + 3px gap
 
-        payload.weeks.forEach((week, weekIndex) => {
-            // Check first day of week for month label
+        // 1. Flatten all contribution days and ensure chronological order
+        let allDays = [];
+        payload.weeks.forEach(w => {
+            if (Array.isArray(w.contributionDays)) {
+                allDays.push(...w.contributionDays);
+            }
+        });
+        allDays.sort((a, b) => (a.date && b.date ? a.date.localeCompare(b.date) : 0));
+
+        // 2. Group into weeks ending on Saturday (or last day)
+        const sortedWeeks = [];
+        let currentWk = [];
+        allDays.forEach((day, index) => {
+            currentWk.push(day);
+            const dayOfWeek = new Date(day.date + 'T00:00:00').getDay();
+            if (dayOfWeek === 6 || index === allDays.length - 1) {
+                sortedWeeks.push({ contributionDays: currentWk });
+                currentWk = [];
+            }
+        });
+
+        // 3. Collect month labels and deduplicate / prevent label collisions
+        const monthLabels = [];
+        let lastMonth = -1;
+
+        sortedWeeks.forEach((week, weekIndex) => {
             if (week.contributionDays && week.contributionDays.length > 0) {
                 const firstDay = week.contributionDays[0];
                 if (firstDay && firstDay.date) {
                     const monthIdx = parseInt(firstDay.date.split('-')[1], 10) - 1;
                     if (monthIdx !== lastMonth) {
-                        lastMonth = monthIdx;
-                        if (calendarMonths) {
-                            const monthSpan = document.createElement('span');
-                            monthSpan.className = 'calendar-month-label';
-                            monthSpan.style.left = `${weekIndex * colWidth}px`;
-                            monthSpan.textContent = monthNames[monthIdx] || '';
-                            calendarMonths.appendChild(monthSpan);
+                        // If the previous label was placed less than 2 weeks ago (e.g. week 0 and week 1),
+                        // drop the previous tiny stub label to avoid horizontal text overlap
+                        if (monthLabels.length > 0 && (weekIndex - monthLabels[monthLabels.length - 1].weekIndex) < 2) {
+                            monthLabels.pop();
                         }
+                        monthLabels.push({
+                            name: monthNames[monthIdx] || '',
+                            weekIndex: weekIndex
+                        });
+                        lastMonth = monthIdx;
                     }
                 }
             }
+        });
 
-            // Render 7 days per column
+        if (calendarMonths) {
+            monthLabels.forEach(label => {
+                const monthSpan = document.createElement('span');
+                monthSpan.className = 'calendar-month-label';
+                monthSpan.style.left = `${label.weekIndex * colWidth}px`;
+                monthSpan.textContent = label.name;
+                calendarMonths.appendChild(monthSpan);
+            });
+        }
+
+        // 4. Render days positioned accurately in the grid
+        sortedWeeks.forEach((week, weekIndex) => {
             week.contributionDays.forEach(day => {
                 const dayEl = document.createElement('div');
                 dayEl.className = `calendar-day lvl-${Math.min(4, Math.max(0, day.level || 0))}`;
@@ -474,6 +511,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 dayEl.setAttribute('data-count', String(day.count || 0));
                 dayEl.setAttribute('role', 'gridcell');
                 dayEl.setAttribute('aria-label', day.tooltip);
+
+                const dayOfWeek = new Date(day.date + 'T00:00:00').getDay();
+                dayEl.style.gridColumn = String(weekIndex + 1);
+                dayEl.style.gridRow = String(dayOfWeek + 1);
 
                 dayEl.addEventListener('mouseenter', (e) => showDayTooltip(e, day.tooltip));
                 dayEl.addEventListener('mouseleave', hideDayTooltip);

@@ -183,12 +183,16 @@ async function fetchViaPublicGitHub(username) {
         days.push({ date, level, count, tooltip });
     }
 
-    // Group days into weeks of 7 (Sunday to Saturday)
+    // Sort days chronologically by date
+    days.sort((a, b) => a.date.localeCompare(b.date));
+
+    // Group days into weeks of Sunday to Saturday
     const weeks = [];
     let currentWeek = [];
     days.forEach((day, index) => {
         currentWeek.push(day);
-        if (currentWeek.length === 7 || index === days.length - 1) {
+        const dayOfWeek = new Date(day.date + 'T00:00:00').getDay();
+        if (dayOfWeek === 6 || index === days.length - 1) {
             weeks.push({ contributionDays: currentWeek });
             currentWeek = [];
         }
